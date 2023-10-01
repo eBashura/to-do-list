@@ -1,0 +1,21 @@
+#version: '3'
+#
+#services:
+#  db:
+#    image: mysql
+#    ports:
+#      - '5432:5432'
+#    environment:
+#       MYSQL_DATABASE: 'django_diplom'
+#       MYSQL_USER: 'root'
+#       MYSQL_PASSWORD: 'pwd'
+#       MYSQL_ROOT_PASSWORD: 'pwd'
+#  web:
+#    build: .
+#    command: python manage.py runserver 0.0.0.0:8000
+#    volumes:
+#      - .:/diplom
+#    ports:
+#      - "8000:8000"
+#    depends_on:
+#      - db
