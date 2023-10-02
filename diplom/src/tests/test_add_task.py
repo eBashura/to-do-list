@@ -1,15 +1,16 @@
 import pytest
-
+# not working
 from views import TaskCreate
+from unittest import TestCase
 
 
-@pytest.mark.django_db
-def test_add_task():
-    """Тест добавления новой задачи"""
-    data = {
-        "title": "write some code",
-        "description": "first task",
-        "completed": 0
-    }
-    url = 'http://locahost:8000/task-create/'
-    response = "success"
+class TestAddingTask(TestCase):
+    def test_add_task(self):
+        """Тест добавления новой задачи"""
+        data = {
+            "title": "write some code",
+            "description": "first task",
+            "completed": 0
+        }
+        url = 'http://locahost:8000/task-create/'
+        response = "success"

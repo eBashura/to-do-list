@@ -1,15 +1,16 @@
 import pytest
-
+# not working
 from views import DeleteView
+from unittest import TestCase
 
 
-@pytest.mark.django_db
-def test_delete_task():
-    """Тест удаления задачи"""
-    data = {
-        "title": "write some code",
-        "description": "first task",
-        "completed": 0
-    }
-    url = 'http://locahost:8000/task-create/'
-    response = "success"
+class TestDeletingTask(TestCase):
+    def test_delete_task(self):
+        """Тест удаления задачи"""
+        data = {
+            "title": "write some code",
+            "description": "first task",
+            "completed": 0
+        }
+        url = 'http://locahost:8000/task-create/'
+        response = "success"

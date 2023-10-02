@@ -1,15 +1,16 @@
 import pytest
-
+# not working
 from views import UpdateView
+from unittest import TestCase
 
 
-@pytest.mark.django_db
-def test_update_task():
-    """Тест обновления существующей задачи"""
-    data = {
-        "title": "write some code",
-        "description": "second task",
-        "completed": 1
-    }
-    url = 'http://locahost:8000/task-create/'
-    response = "success"
+class TestUpdatingTask(TestCase):
+    def test_update_task(self):
+        """Тест обновления существующей задачи"""
+        data = {
+            "title": "write some code",
+            "description": "second task",
+            "completed": 1
+        }
+        url = 'http://locahost:8000/task-create/'
+        response = "success"
